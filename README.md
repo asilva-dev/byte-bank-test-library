@@ -1,6 +1,6 @@
 ## Access the Repository
 
-Click [here](https://byte-bank-test-library.vercel.app/) to access the navigable website, click here:
+Click [here](https://byte-bank-test-library.vercel.app/) to access the navigable website.
 
 # Getting Started with Create React App
 
