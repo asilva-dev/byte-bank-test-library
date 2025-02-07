@@ -9,7 +9,7 @@ export default function Cabecalho() {
       <div className={estilos.container}>
         <Logo />
         <div className={estilos.usuario}>
-          <p>Joana Fonseca Gomes</p>
+          <p>Amanda Menezes</p>
           <img src={avatarUsuario} alt="Ícone de um avatar de usuário" />
         </div>
       </div>
