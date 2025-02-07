@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import Formulario from './index';
 import userEvent from '@testing-library/user-event';
+import Formulario from './index';
 
 describe('Deve renderizar um campo de input', () => {
   test('no documento', () => {
@@ -9,26 +9,26 @@ describe('Deve renderizar um campo de input', () => {
     expect(campoTexto).toBeInTheDocument();
   });
 
-  test('com o type number', () => {
+  test(' com o type number', () => {
     render(<Formulario />);
     const campoTexto = screen.getByPlaceholderText('Digite um valor');
     expect(campoTexto).toHaveAttribute('type', 'number');
   });
 
-  test('pode ser preenchido', () => {
+  test(' que pode ser preenchido', () => {
     render(<Formulario />);
     const campoTexto = screen.getByPlaceholderText('Digite um valor');
     userEvent.type(campoTexto, '50');
     expect(campoTexto).toHaveValue(50);
   });
+});
 
-  test('Deve renderizar um campo de input que pode ser preenchido', () => {
-    const realizarTransacao = jest.fn();
+test('Deve chamar um evento de onSubmit ao clicar em realizar transação', () => {
+  const realizarTransacao = jest.fn();
 
-    render(<Formulario realizarTransacao={realizarTransacao} />);
-    const botao = screen.getByRole('button');
+  render(<Formulario realizarTransacao={realizarTransacao} />);
+  const botao = screen.getByRole('button');
 
-    userEvent.click(botao);
-    expect(realizarTransacao).toHaveBeenCalledTimes(1);
-  });
+  userEvent.click(botao);
+  expect(realizarTransacao).toHaveBeenCalledTimes(1);
 });
