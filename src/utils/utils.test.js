@@ -4,7 +4,7 @@ describe('Quando eu realizo uma transação', () => {
   it('Que é um depósito, o saldo deve aumentar', () => {
     const transacao = {
       transacao: 'Depósito',
-      valor: 50
+      valor: 50,
     };
 
     const novoSaldo = calculaNovoSaldo(transacao, 100);
@@ -15,7 +15,7 @@ describe('Quando eu realizo uma transação', () => {
   test('Que é uma Transferência, o saldo deve diminuir', () => {
     const transacao = {
       transacao: 'Tranferência',
-      valor: 50
+      valor: 50,
     };
 
     const novoSaldo = calculaNovoSaldo(transacao, 100);
