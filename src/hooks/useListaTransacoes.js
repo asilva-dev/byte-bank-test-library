@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { buscaTransacoes } from '../services/transacoes';
+import { buscaTransacoes } from '../services/transacoes.js';
 
 export default function useListaTransacoes() {
   const [transacoes, setTransacoes] = useState([]);
