@@ -1,16 +1,16 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { calculaNovoSaldo } from '../../utils';
-import { salvaTransacao } from '../../services/transacoes';
-import { atualizaSaldo } from '../../services/saldo';
-import useListaTransacoes from '../../hooks/useListaTransacoes';
-import useSaldo from '../../hooks/useSaldo';
+import { calculaNovoSaldo } from '../../utils/index.js';
+import { salvaTransacao } from '../../services/transacoes.js';
+import { atualizaSaldo } from '../../services/saldo.js';
+import useListaTransacoes from '../../hooks/useListaTransacoes.js';
+import useSaldo from '../../hooks/useSaldo.js';
 import estilos from './App.module.css';
 
-import Cabecalho from '../../componentes/Cabecalho';
-import Extrato from '../../componentes/Extrato';
-import Menu from '../../componentes/Menu';
-import Principal from '../../componentes/Principal';
-import Transacao from '../../componentes/Transacao';
+import Cabecalho from '../../componentes/Cabecalho/index.jsx';
+import Extrato from '../../componentes/Extrato/index.jsx';
+import Menu from '../../componentes/Menu/index.jsx';
+import Principal from '../../componentes/Principal/index.jsx';
+import Transacao from '../../componentes/Transacao/index.jsx';
 
 export default function App() {
   const [saldo, setSaldo] = useSaldo();
@@ -36,6 +36,7 @@ export default function App() {
             <Transacao realizarTransacao={realizarTransacao} />
           )}
           <Outlet />
+          <noscript data-testid="local">{location.pathname}</noscript>
         </div>
         <Extrato transacoes={transacoes} />
       </main>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { buscaSaldo } from '../services/saldo';
+import { buscaSaldo } from '../services/saldo.js';
 
 export default function useSaldo() {
   const [saldo, setSaldo] = useState(0);
